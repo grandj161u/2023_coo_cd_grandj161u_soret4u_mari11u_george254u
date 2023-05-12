@@ -1,0 +1,3 @@
+Question 4:
+
+La classe main instance un ChargeurMagasin, le main lance ChargerMagasin(), qui instance un magasin et un ChargeurCD, la méthode ChargerMagasin() active ensuite la méthode ChargerCD() qui instance un objet CD, active ensuite la méthode extrairePiste() qui fait parti de la même classe, ensuite la méthode ChrgerCD() active les méthodes ajouterPiste(), encore la méthode extrairePiste() et encore la méthodes ajouterPiste() avant de renvoyer sa valeur à la méthode chargerMagasin() qui finit par activer la méthode ajouterCd(cd1) avant de renvoyer sa valeur au mail.
