@@ -56,7 +56,7 @@ public class Magasin {
 	}
 	
 	/**
-	 * permet d'acceder à un CD
+	 * permet d'acceder ï¿½ un CD
 	 * 
 	 * @return le cd a l'indice i ou null si indice est non valide
 	 */
@@ -72,8 +72,20 @@ public class Magasin {
 	}
 
 	public void trierAlbum() {
+		ArrayList<CD> listeCdsTries = new ArrayList<CD>();
+
+		while(listeCds.size() >0) {
+			int indicePetit = 0;
+			for (int i = 0; i<listeCds.size();i++) {
+				if(listeCds.get(indicePetit).getNomCD().compareTo(listeCds.get(i).getNomCD()) > 0) {
+					indicePetit = i;
+				}
+			}
+			listeCdsTries.add(listeCds.get(indicePetit));
+			listeCds.remove(indicePetit);
+		}
+		listeCds= (ArrayList<CD>) listeCdsTries.clone();
 	}
 
-	// TODO  ajouter une methode de tri
 
 }
