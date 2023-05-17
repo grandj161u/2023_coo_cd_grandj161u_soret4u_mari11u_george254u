@@ -30,6 +30,10 @@ public class CD {
 	private String nomArtiste;
 	private String nomCD;
 
+	public List<InfoPiste> getPistes() {
+		return pistes;
+	}
+
 	/**
 	 * les pistes du CD
 	 */

@@ -36,10 +36,10 @@ public class TestMagasin {
         assertEquals("Zebda",magasin.getCd(magasin.getNombreCds()-1).getNomArtiste(), "le dernier artiste doit etre Zebda");
     }
 
-    @Test
-/**
- * Validation de la fonctionnalité triArtiste dans le cas où les éléments sont déjà triés
- */
+    /** @Test
+
+    * Validation de la fonctionnalité triArtiste dans le cas où les éléments sont déjà triés
+
     public void verifierTriArtiste_SiDejaTrie() {
         // Initialisation
         Magasin boutique = new Magasin();
@@ -70,5 +70,19 @@ public class TestMagasin {
 
         cdCourant = boutique.getCd(3);
         assertEquals("Vian est le dernier", cdCourant, album3);
+    } */
+
+    @Test
+        //test la methode trierArtiste
+    void testTrierNbPistes() throws FileNotFoundException {
+        //preparation des donnees
+        String repertoire = "musicbrainzSimple/";
+        ChargeurMagasin charge = new ChargeurMagasin(repertoire);
+        Magasin magasin = charge.chargerMagasin();
+        //Test de la methode
+        magasin.trier(new ComparateurPiste());
+        //Tests
+        assertEquals("Whitney Houston",magasin.getCd(0).getNomArtiste(),"le premier artiste doit etre Whitney Houston");
+        assertEquals("Justin Bieber",magasin.getCd(magasin.getNombreCds()-1).getNomArtiste(), "le dernier artiste doit etre Justin Bieber");
     }
 }
