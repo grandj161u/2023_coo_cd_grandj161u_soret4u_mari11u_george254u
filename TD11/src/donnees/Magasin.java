@@ -71,7 +71,7 @@ public class Magasin {
 	/**
 	 * Permet de trier les cd selon les artistes
 	 *
-	 */
+
 	public void trierArtiste() {
 		ArrayList<CD> listeCdsTries = new ArrayList<CD>();
 
@@ -86,12 +86,12 @@ public class Magasin {
 			listeCds.remove(indicePetit);
 		}
 		listeCds= (ArrayList<CD>) listeCdsTries.clone();
-	}
+	} */
 
 	/**
 	 * Permet de trier les cd selon les albums
 	 *
-	 */
+
 	public void trierAlbum() {
 		ArrayList<CD> listeCdsTries = new ArrayList<CD>();
 
@@ -106,5 +106,23 @@ public class Magasin {
 			listeCds.remove(indicePetit);
 		}
 		listeCds= (ArrayList<CD>) listeCdsTries.clone();
+	}*/
+
+
+	public void trier(ComparateurCd comparateurCd) {
+		ArrayList<CD> listeCdsTries = new ArrayList<CD>();
+
+		while(listeCds.size() >0) {
+			int indicePetit = 0;
+			for (int i = 0; i<listeCds.size();i++) {
+				if(comparateurCd.etreAvant(listeCds.get(indicePetit),listeCds.get(i))) {
+					indicePetit = i;
+				}
+			}
+			listeCdsTries.add(listeCds.get(indicePetit));
+			listeCds.remove(indicePetit);
+		}
+		listeCds= (ArrayList<CD>) listeCdsTries.clone();
+
 	}
 }
