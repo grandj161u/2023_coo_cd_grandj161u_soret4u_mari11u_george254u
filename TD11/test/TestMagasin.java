@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestMagasin {
 
     @Test
+    //test de la methode trierAlbum
     void testTrierAlbum() throws FileNotFoundException {
         //preparation des donnees
         String repertoire = "musicbrainzSimple/";
@@ -21,6 +22,8 @@ public class TestMagasin {
         assertEquals("Whitney Houston",magasin.getCd(magasin.getNombreCds()-1).getNomCD(), "le dernier album doit etre Whitney Houston");
     }
 
+    @Test
+    //test la methode trierArtiste
     void testTrierArtiste() throws FileNotFoundException {
         //preparation des donnees
         String repertoire = "musicbrainzSimple/";
@@ -29,7 +32,7 @@ public class TestMagasin {
         //Test de la methode
         magasin.trierArtiste();
         //Tests
-        assertEquals("Bieber",magasin.getCd(0).getNomArtiste(),"le premier artiste doit etre Bieber");
+        assertEquals("Bénabar",magasin.getCd(0).getNomArtiste(),"le premier artiste doit etre Bénabar");
         assertEquals("Zebda",magasin.getCd(magasin.getNombreCds()-1).getNomArtiste(), "le dernier artiste doit etre Zebda");
     }
 }

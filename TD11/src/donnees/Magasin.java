@@ -68,6 +68,10 @@ public class Magasin {
 		return(res);
 	}
 
+	/**
+	 * Permet de trier les cd selon les artistes
+	 *
+	 */
 	public void trierArtiste() {
 		ArrayList<CD> listeCdsTries = new ArrayList<CD>();
 
@@ -84,6 +88,10 @@ public class Magasin {
 		listeCds= (ArrayList<CD>) listeCdsTries.clone();
 	}
 
+	/**
+	 * Permet de trier les cd selon les albums
+	 *
+	 */
 	public void trierAlbum() {
 		ArrayList<CD> listeCdsTries = new ArrayList<CD>();
 
@@ -99,6 +107,4 @@ public class Magasin {
 		}
 		listeCds= (ArrayList<CD>) listeCdsTries.clone();
 	}
-
-
 }
