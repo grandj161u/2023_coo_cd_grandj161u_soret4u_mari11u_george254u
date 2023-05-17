@@ -1,8 +1,5 @@
 import XML.ChargeurMagasin;
-import donnees.ComparateurAlbum;
-import donnees.ComparateurArtiste;
-import donnees.ComparateurCd;
-import donnees.Magasin;
+import donnees.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
@@ -58,7 +55,7 @@ public class TestMagasin {
         boutique.ajouteCd(album3);
 
         // Exécution de la méthode de tri
-        boutique.trierAriste();
+        boutique.trier(new ComparateurAlbum());
 
         // Vérifications
         CD cdCourant = boutique.getCd(0);
@@ -74,7 +71,4 @@ public class TestMagasin {
         cdCourant = boutique.getCd(3);
         assertEquals("Vian est le dernier", cdCourant, album3);
     }
-
-
-
 }
