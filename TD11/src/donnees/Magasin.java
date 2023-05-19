@@ -1,5 +1,6 @@
 package donnees;
 
+import javax.lang.model.element.Element;
 import java.util.ArrayList;
 
 /**
@@ -124,5 +125,25 @@ public class Magasin {
 		}
 		listeCds= (ArrayList<CD>) listeCdsTries.clone();
 
+	}
+
+	public ArrayList<CD> chercherArtiste(String nomArtiste) {
+		ArrayList<CD> listeArtiste = new ArrayList<CD>();
+		for(int i=0;i<listeCds.size();i++) {
+			if(listeCds.get(i).getNomArtiste().equals(nomArtiste)) {
+				listeArtiste.add(listeCds.get(i));
+			}
+		}
+		return listeArtiste;
+	}
+
+	public ArrayList<CD> chercher(Selecteur selecteur) {
+		ArrayList<CD> liste = new ArrayList<CD>();
+		for(int i=0;i<listeCds.size();i++) {
+			if(selecteur.garderCd(listeCds.get(i)) == true) {
+				liste.add(listeCds.get(i));
+			}
+		}
+		return liste;
 	}
 }
