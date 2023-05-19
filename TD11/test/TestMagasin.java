@@ -86,4 +86,20 @@ public class TestMagasin {
         assertEquals("Whitney Houston",magasin.getCd(0).getNomArtiste(),"le premier artiste doit etre Whitney Houston");
         assertEquals("Justin Bieber",magasin.getCd(magasin.getNombreCds()-1).getNomArtiste(), "le dernier artiste doit etre Justin Bieber");
     }
+
+    @Test
+    void test_chercher() throws FileNotFoundException {
+        //preparation des donnees
+        String repertoire = "musicbrainzSimple/";
+        ChargeurMagasin charge = new ChargeurMagasin(repertoire);
+        Magasin magasin = charge.chargerMagasin();
+
+        ArrayList<CD> test = magasin.chercher(new SelecteurArtiste("Bieber"));
+
+        assertEquals(test.get(0).getNomArtiste(), magasin.getCd(0).getNomCD(),"le premier cd est Believe");
+        assertEquals(test.get(1).getNomArtiste(), magasin.getCd(1).getNomCD(),"le dernier cd est Worlds");
+
+
+
+    }
 }
